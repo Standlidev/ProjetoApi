@@ -11,7 +11,7 @@
 
     <header>
 
-        <div id="headerTittle">Pokedex</div>
+        <div id="headerTittle"><h1 id="hTittle">Pokedex</h1></div>
         <div id="headerInput">
             <input type="text" placeholder="Digite o ID ou nome do Pokemon" id="pokeNID">
             <button onclick="pokemonSearch()" id="searchBtn">Buscar</button>
@@ -24,9 +24,13 @@
         <div class="pokemonContainer">
             <div id="pokemonName"></div>
             <div id="pokemonMain">
-                <img src="" alt="pokemon">
+                <img src="" alt="pokemon" id="pokeImg">
                 <div id="pokemonDetails">
-
+                    <div class="pokeinfo00"></div>
+                    <div class="pokeinfo01"></div>
+                    <div class="pokeinfo02"></div>
+                    <div class="pokeinfo03"></div>
+                    <button id="prev">Anterior</button> <button id="next">Proximo</button>
                 </div>
             </div>
 
