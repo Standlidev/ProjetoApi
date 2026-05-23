@@ -26,22 +26,23 @@ async function pokemonSearch(){
         }
 
         const imgElement = document.querySelector('#pokeImg');
-        const nameElement = document.querySelector('#pokemonName');
-        const info00 = document.querySelector('.pokeinfo00');
-        const info01 = document.querySelector('.pokeinfo01');
-        const info02 = document.querySelector('.pokeinfo02');
-        const info03 = document.querySelector('.pokeinfo03');
+        const nameElement = document.querySelector('#pokemonName')
+        const info00 = document.querySelector('.pokeinfo00')
+        const info01 = document.querySelector('.pokeinfo01')
+        const info02 = document.querySelector('.pokeinfo02')
+        const info03 = document.querySelector('.pokeinfo03')
 
-        nameElement.textContent = pokemonFiltrado.nome;
-        imgElement.src = pokemonFiltrado.imagem;
-        imgElement.alt = pokemonFiltrado.nome;
+        nameElement.textContent = pokemonFiltrado.nome
+        imgElement.src = pokemonFiltrado.imagem
+        imgElement.alt = pokemonFiltrado.nome
         
-        info00.textContent = `ID: ${pokemonFiltrado.id}`;
-        info01.textContent = `Tipo: ${pokemonFiltrado.tipos}`;
-        info02.textContent = `Peso: ${pokemonFiltrado.peso}`;
-        info03.textContent = `Altura: ${pokemonFiltrado.altura}`;
+        info00.textContent = `ID: ${pokemonFiltrado.id}`
+        info01.textContent = `Tipo: ${pokemonFiltrado.tipos}`
+        info02.textContent = `Peso: ${pokemonFiltrado.peso}`
+        info03.textContent = `Altura: ${pokemonFiltrado.altura}`
     } catch (error) {
-        console.error('Erro na requisição');
+        console.error('Erro na requisição')
+        alert('Pokémon não encontrado. Verifique o nome ou ID.')
     }
 
 
