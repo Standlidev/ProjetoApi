@@ -13,7 +13,7 @@
 
         <div id="headerTittle"><h1 id="hTittle">Pokedex</h1></div>
         <div id="headerInput">
-            <input type="text" placeholder="Digite o ID ou nome do Pokemon" id="pokeNID">
+            <input type="text" placeholder="Digite o ID ou nome do Pokemon" id="pokeNID" onkeydown="if(event.key ==='Enter') pokemonSearch()" >
             <button onclick="pokemonSearch()" id="searchBtn">Buscar</button>
         </div>
     
@@ -31,7 +31,7 @@
                         <div class="pokeinfo02"></div>
                         <div class="pokeinfo03"></div>
                         <div id="btns">
-                            <button id="prev">Anterior</button> <button id="next">Proximo</button>
+                            <button id="prev" onclick="pokemonAnterior()">Anterior</button> <button id="next" onclick="pokemonProximo()">Proximo</button>
                         </div>
                     </div>
             </div>

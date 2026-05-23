@@ -101,6 +101,8 @@ main{
 #pokeImg{
     height: 90%;
     width: auto;
+    object-fit: contain;
+    content-visibility: auto;
 }
 #pokemonName{
     font-family: 'Courier New', Courier, monospace;

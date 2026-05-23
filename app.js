@@ -1,12 +1,12 @@
 
 //Função para capturar o input e exibir o resultado na tela
-
+let currentPokemonId = 1
 async function pokemonSearch(){
     
     let pokemon = document.querySelector('#pokeNID').value.toLowerCase().trim()
     //valor para variavel nao comecar vazia e preencher o conteudo no site
     if (!pokemon) {
-        pokemon = "1"
+        pokemon = currentPokemonId.toString()
     }
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
     
@@ -44,12 +44,40 @@ async function pokemonSearch(){
         info01.textContent = `Tipo: ${pokemonFiltrado.tipos}`
         info02.textContent = `Peso: ${pokemonFiltrado.peso}`
         info03.textContent = `Altura: ${pokemonFiltrado.altura}`
+
+        //limpar o campo do input para nao inteferrir nos botao proximo e anterior
+        document.querySelector('#pokeNID').value = ""
     } catch (error) {
         console.error('Erro na requisição')
         alert('Pokémon não encontrado. Verifique o nome ou ID.')
     }
 
-
+    currentPokemonId = pokemon
 }
+
+
+function pokemonProximo() {
+   
+    if (currentPokemonId >= 1025) {
+        alert("Você chegou ao último Pokémon cadastrado!")
+        return
+    }
+    currentPokemonId++ // Soma 1 ao ID atual
+    pokemonSearch()    // Executa a busca com o novo ID
+   
+}
+
+
+function pokemonAnterior() {
+    
+    if (currentPokemonId <= 1) {
+        alert("Este já é o primeiro Pokémon!")
+        return
+    }
+    currentPokemonId-- // Subtrai 1 do ID atual
+    pokemonSearch()    // Executa a busca com o novo ID
+    
+}
+
 //fazer a função ser chamada quando a pagina inteira carregar
 window.addEventListener('DOMContentLoaded', pokemonSearch);
