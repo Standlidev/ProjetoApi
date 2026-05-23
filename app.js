@@ -2,10 +2,14 @@
 //Função para capturar o input e exibir o resultado na tela
 
 async function pokemonSearch(){
-    //constantes para armazenar o valor do input e tranformar numa url para a API
-    const pokemon = document.querySelector('#pokeNID').value
+    
+    let pokemon = document.querySelector('#pokeNID').value.toLowerCase().trim()
+    //valor para variavel nao comecar vazia e preencher o conteudo no site
+    if (!pokemon) {
+        pokemon = "1"
+    }
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-    //try e catch para utilizar o url na api armazernar as informacoes desejaveis e exibir na tela
+    
     try {
 
         const pokeUrl = await(fetch(url))
@@ -47,4 +51,5 @@ async function pokemonSearch(){
 
 
 }
-
+//fazer a função ser chamada quando a pagina inteira carregar
+window.addEventListener('DOMContentLoaded', pokemonSearch);
