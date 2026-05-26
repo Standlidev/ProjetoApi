@@ -81,8 +81,8 @@ main{
     display: flex;
     flex-direction: column;
     padding: 2%;
-    width: 60%;
-    height: 50%;
+    width: 53%;
+    height: 48%;
     background-color: #d82c49;
     gap: 20px;
     border-radius: 8px;
@@ -99,8 +99,9 @@ main{
 }
 
 #pokeImg{
-    height: 90%;
-    width: auto;
+    height: 80%;
+    width: 60%;
+    max-width: 50%;
     object-fit: contain;
     content-visibility: auto;
 }
@@ -113,8 +114,9 @@ main{
 #pokemonDetails{
     display: flex;
     flex-direction: column;
-    gap: 11%;
-    width: 50%;
+    align-items: end;
+    gap: 5%;
+    width: 70%;
     padding: 2%;
 }
 
@@ -126,9 +128,11 @@ main{
 
 .pokeinfo00, .pokeinfo01, .pokeinfo02, .pokeinfo03{
     font-family: 'Courier New', Courier, monospace;
+    width: 80%;
 }
 
 #btns{
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }
@@ -139,7 +143,6 @@ main{
         font-weight: 700;
         padding: 8px 16px; 
         border-radius: 8px;
-        margin: 0 10% 0 0;
         border: #212121 solid 2px; 
         cursor: pointer; 
         transition: background 0.2s;
